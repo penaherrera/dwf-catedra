@@ -23,3 +23,7 @@ Contiene las clases que representan los datos de la aplicación (entidades). Est
 ## Contribuidores:
 * Carlos Peña [https://github.com/penaherrera]
 * Daniel Rivera [https://github.com/Daniel2452]
+* Vladimir Alarcón []
+* Daniel Valladares []
+* Nelson Manzanares []
+* Diego Chávez []
