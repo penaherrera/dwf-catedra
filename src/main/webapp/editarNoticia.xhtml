@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+<h:head>
+    <title>Editar Noticia</title>
+    <!-- Enlace al archivo CSS -->
+    <h:outputStylesheet library="css" name="styles.css"/>
+</h:head>
+
+<h:body>
+    <!-- Navbar -->
+    <div class="navbar">
+        <h:link value="Inicio" outcome="index" />
+        <h:link value="Noticias" outcome="noticiasAdmin" />
+        <h:link value="Eventos" outcome="eventosAdmin" />
+        <h:link value="Plantilla" outcome="plantilla" />
+        <h:link value="Descuentos" outcome="descuentos" />
+    </div>
+
+    <!-- Contenido de la página -->
+    <div class="container">
+        <h1>Editar Noticia</h1>
+
+        <!-- Formulario para editar noticia -->
+        <h:form>
+            <!-- Campo oculto para enviar el ID -->
+            <h:inputHidden id="noticiaId" value="#{noticiaBean.noticia.id}" />
+
+            <h:panelGroup>
+                <h:outputLabel for="titulo" value="Título:" />
+                <h:inputText id="titulo" value="#{noticiaBean.noticia.titulo}" required="true" />
+            </h:panelGroup>
+            <h:panelGroup>
+                <h:outputLabel for="descripcion" value="Descripción:" />
+                <h:inputTextarea id="descripcion" value="#{noticiaBean.noticia.descripcion}" required="true" />
+            </h:panelGroup>
+            <h:panelGroup>
+                <h:outputLabel for="fecha" value="Fecha:" />
+                <h:inputText id="fecha" value="#{noticiaBean.noticia.fecha}" required="true" />
+            </h:panelGroup>
+
+            <h:commandButton value="Guardar" action="#{noticiaBean.save()}" />
+            <h:commandButton value="Cancelar" action="noticiasAdmin" />
+        </h:form>
+    </div>
+</h:body>
+</html>

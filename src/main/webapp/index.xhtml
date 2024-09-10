@@ -1,0 +1,46 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+<h:head>
+    <title>Noticias</title>
+    <!-- Enlace al archivo CSS -->
+    <h:outputStylesheet library="css" name="styles.css"/>
+</h:head>
+<h:body>
+    <!-- Navbar -->
+    <div class="navbar">
+        <h:link value="Noticias" outcome="noticias" styleClass="nav-link"/>
+        <h:link value="Eventos" outcome="eventos" styleClass="nav-link"/>
+        <h:link value="Plantilla" outcome="plantilla" styleClass="nav-link"/>
+        <h:link value="Descuentos" outcome="descuentos" styleClass="nav-link"/>
+        <h:link value="Administrar" outcome="admin/administrar" styleClass="nav-link"/>
+    </div>
+
+    <!-- Contenido de la página -->
+    <div class="container">
+        <h2>Noticias</h2>
+
+        <h:dataTable value="#{noticiaBean.noticias}" var="noticia">
+            <h:column>
+                <f:facet name="header">Título</f:facet>
+                <h:outputText value="#{noticia.titulo}" />
+            </h:column>
+            <h:column>
+                <f:facet name="header">Contenido</f:facet>
+                <h:outputText value="#{noticia.descripcion}" />
+            </h:column>
+            <h:column>
+                <f:facet name="header">Fecha</f:facet>
+                <h:outputText value="#{noticia.fecha}" />
+            </h:column>
+        </h:dataTable>
+
+        <!-- Mensaje si no hay noticias -->
+        <h:panelGroup rendered="#{empty noticiaBean.noticias}">
+            <h:outputText value="No hay noticias disponibles" />
+        </h:panelGroup>
+
+    </div>
+</h:body>
+</html>
