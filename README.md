@@ -1,7 +1,7 @@
 # DWF404: Proyecto de cátedra
 ### Descripción
 
-La aplicación presenta una gestión sobre la información de un equipo de fútbol, incluyendo el uso de JPA el cual será utilizado para la gestión de mapeo de objetos relacionales a tablas de base de datos. 
+Esta aplicación JSF presenta una gestión sobre la información de un equipo de fútbol, incluyendo el uso de JPA el cual será utilizado para la gestión de mapeo de objetos relacionales a tablas de base de datos. 
 El proyecto fue construido en base a los requerimientos del proyecto de cátedra de la materia Desarrollo de Aplicaciones Web con Frameworks.
 
 ## Tecnologías Utilizadas
