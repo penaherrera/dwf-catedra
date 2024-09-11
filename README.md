@@ -17,7 +17,9 @@ Descripción de despliegue
 ## Descripcion de los Paquetes
 ### beans:
 Descripción
-### models:
+### repository:
+Descripción
+### domain:
 Descripción
 
 ## Funcionalidades: 
@@ -29,5 +31,5 @@ Descripción
 * José Daniel Molina Rivera [https://github.com/Daniel2452]
 * Oscar Vladimir Alarcón Mendoza [https://github.com/Alarcon07]
 * Christian Daniel Valladares Quintanilla [https://github.com/CSGValladares]
-* Nelson Manzanares Maldonado []
+* Nelson Otoniel Maldonado Manzanares [https://github.com/maldonado20]
 * Diego Ismael Chávez Acevedo [https://github.com/DiegoIsmaelChavez]
