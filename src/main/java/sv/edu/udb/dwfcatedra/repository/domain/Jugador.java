@@ -8,6 +8,8 @@ public class Jugador extends Miembro {
 
     @Column(nullable = false)
     private String posicion;
+
     @Column(nullable = false)
     private int dorsal;
+
 }
