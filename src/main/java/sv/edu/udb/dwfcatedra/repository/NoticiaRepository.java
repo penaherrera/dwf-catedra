@@ -1,7 +1,7 @@
 package sv.edu.udb.dwfcatedra.repository;
-import javax.inject.Named;
-import javax.persistence.EntityManager;
-import javax.persistence.PersistenceContext;
+import jakarta.inject.Named;
+import jakarta.persistence.EntityManager;
+import jakarta.persistence.PersistenceContext;
 import sv.edu.udb.dwfcatedra.repository.domain.Noticia;
 import java.util.List;
 

@@ -1,6 +1,6 @@
 package sv.edu.udb.dwfcatedra.repository.domain;
 
-import javax.persistence.*;
+import jakarta.persistence.*;
 import java.util.Date;
 import lombok.AllArgsConstructor;
 import lombok.Builder;

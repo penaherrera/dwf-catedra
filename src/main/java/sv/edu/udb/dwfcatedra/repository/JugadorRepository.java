@@ -2,8 +2,8 @@ package sv.edu.udb.dwfcatedra.repository;
 
 import sv.edu.udb.dwfcatedra.repository.domain.Jugador;
 
-import javax.persistence.EntityManager;
-import javax.persistence.PersistenceContext;
+import jakarta.persistence.EntityManager;
+import jakarta.persistence.PersistenceContext;
 import java.util.List;
 
 public class JugadorRepository {

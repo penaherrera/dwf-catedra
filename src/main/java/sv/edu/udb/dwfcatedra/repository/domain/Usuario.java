@@ -1,6 +1,6 @@
 package sv.edu.udb.dwfcatedra.repository.domain;
 
-import javax.persistence.*;
+import jakarta.persistence.*;
 
 @Entity
 public class Usuario {
