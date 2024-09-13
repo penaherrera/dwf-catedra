@@ -1,47 +1,104 @@
 body {
     font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
     margin: 0;
     padding: 0;
-    background-color: #f0f0f0;
 }
+
+.navbar {
+    background-color: #343a40;
+    color: #fff;
+    padding: 10px;
+}
+
+.navbar a {
+    color: #fff;
+    padding: 10px;
+    text-decoration: none;
+}
+
+.navbar a:hover {
+    background-color: #495057;
+}
+
 
 .container {
     width: 80%;
-    margin: 20px auto;
-    background-color: #fff;
+    margin: auto;
     padding: 20px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
 }
 
 h1 {
     text-align: center;
-    margin-bottom: 20px;
-}
-
-.card-container {
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
+    color: #333;
+    margin-bottom: 30px;
 }
 
 .card {
     background-color: #fff;
-    border: 1px solid #ddd;
     border-radius: 8px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-    margin: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
     padding: 20px;
-    width: 200px;
     text-align: center;
+    transition: box-shadow 0.3s ease-in-out;
+}
+
+.card:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
 .card-link {
-    display: block;
-    color: #333;
     text-decoration: none;
+    color: #007bff;
+    font-size: 18px;
     font-weight: bold;
 }
 
 .card-link:hover {
-    background-color: #f5f5f5;
+    color: #0056b3;
+    text-decoration: underline;
+}
+footer {
+    background-color: #2e7d32;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+    width: 100%;
+    box-shadow: 0px -2px 5px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+}
+
+footer h5 {
+    margin: 0;
+    font-size: 16px;
+    font-weight: normal;
+}
+
+footer h5::before {
+    content: "\00A9 ";
+}
+
+footer a {
+    color: #a5d6a7;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+.container {
+    flex: 1;
 }

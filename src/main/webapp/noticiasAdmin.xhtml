@@ -1,24 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
         "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/xhtml"
+<html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:f="http://xmlns.jcp.org/jsf/core">
 
 <h:head>
     <title>Administrar Noticias</title>
     <!-- Enlace al archivo CSS -->
-    <h:outputStylesheet library="css" name="styles.css"/>
+    <h:outputStylesheet library="css" name="principal.css"/>
 </h:head>
 
 <h:body>
     <!-- Navbar -->
     <div class="navbar">
-        <h:link value="Inicio" outcome="index" />
-        <h:link value="Noticias" outcome="noticiasAdmin" />
-        <h:link value="Eventos" outcome="eventosAdmin" />
+        <h:link value="Inicio" outcome="index"/>
+        <h:link value="Eventos" outcome="eventos" />
         <h:link value="Plantilla" outcome="plantilla" />
         <h:link value="Descuentos" outcome="descuentos" />
+        <h:link value="Administrar" outcome="administrar"/>
     </div>
 
     <!-- Contenido de la página -->
@@ -26,7 +26,7 @@
         <h1>Administrar Noticias</h1>
 
         <!-- Tabla para listar noticias con enlaces para edición -->
-        <h:dataTable value="#{noticiaBean.findAll()}" var="noticia">
+        <h:dataTable value="#{noticiaBean.noticias}" var="noticia">
             <h:column>
                 <f:facet name="header">Título</f:facet>
                 <!-- Enlace para redirigir a la página de edición con el ID de la noticia -->
@@ -36,5 +36,8 @@
             </h:column>
         </h:dataTable>
     </div>
+    <footer>
+        <h5>2024 - Club deportivo UDB. Todos los derechos reservados</h5>
+    </footer>
 </h:body>
 </html>

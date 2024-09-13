@@ -1,3 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:f="http://xmlns.jcp.org/jsf/core">
@@ -5,16 +8,16 @@
 <h:head>
     <title>Noticias</title>
     <!-- Enlace al archivo CSS -->
-    <h:outputStylesheet library="css" name="styles.css"/>
+    <h:outputStylesheet library="css" name="principal.css"/>
 </h:head>
 <h:body>
     <!-- Navbar -->
     <div class="navbar">
-        <h:link value="Noticias" outcome="noticias" styleClass="nav-link"/>
-        <h:link value="Eventos" outcome="eventos" styleClass="nav-link"/>
-        <h:link value="Plantilla" outcome="plantilla" styleClass="nav-link"/>
-        <h:link value="Descuentos" outcome="descuentos" styleClass="nav-link"/>
-        <h:link value="Administrar" outcome="admin/administrar" styleClass="nav-link"/>
+        <h:link value="Inicio" outcome="index"/>
+        <h:link value="Eventos" outcome="eventos" />
+        <h:link value="Plantilla" outcome="plantilla" />
+        <h:link value="Descuentos" outcome="descuentos" />
+        <h:link value="Administrar" outcome="administrar"/>
     </div>
 
     <!-- Contenido de la página -->
@@ -42,5 +45,10 @@
         </h:panelGroup>
 
     </div>
+
+    <footer>
+        <h5>2024 - Club deportivo UDB. Todos los derechos reservados</h5>
+    </footer>
+
 </h:body>
 </html>

@@ -7,9 +7,25 @@
       xmlns:f="http://xmlns.jcp.org/jsf/core">
 <h:head>
     <title>Descuentos</title>
+    <h:outputStylesheet library="css" name="principal.css"/>
 </h:head>
 <h:body>
+
+    <div class="navbar">
+        <h:link value="Inicio" outcome="index"/>
+        <h:link value="Eventos" outcome="eventos"/>
+        <h:link value="Plantilla" outcome="plantilla"/>
+        <h:link value="Descuentos" outcome="descuentos"/>
+        <h:link value="Administrar" outcome="administrar"/>
+    </div>
+
+    <div class="container">
     <h2>Descuentos</h2>
     <p>Aquí irán los descuentos.</p>
+    </div>
+
+    <footer>
+        <h5>2024 - Club deportivo UDB. Todos los derechos reservados</h5>
+    </footer>
 </h:body>
 </html>
