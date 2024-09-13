@@ -17,4 +17,9 @@ public class NoticiaRepository {
                 .createQuery(QUERY, Noticia.class)
                 .getResultList();
     }
+
+    public Noticia findById(final Long id) {
+        return entityManager.find(Noticia.class, id);
+    }
+
 }

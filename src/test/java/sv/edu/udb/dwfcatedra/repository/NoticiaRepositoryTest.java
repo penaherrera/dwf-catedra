@@ -11,9 +11,10 @@ import javax.persistence.EntityManager;
 import javax.persistence.TypedQuery;
 import java.util.Arrays;
 import java.util.List;
-
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.mockito.Mockito.when;
+import static org.mockito.Mockito.*;
+
 
 public class NoticiaRepositoryTest {
 
@@ -42,5 +43,21 @@ public class NoticiaRepositoryTest {
         List<Noticia> result = noticiaRepository.findAll();
 
         assertEquals(noticiasMock.size(), result.size());
+    }
+
+    @Test
+    public void testFindById() {
+        Long noticiaId = 1L;
+        Noticia noticiaMock = new Noticia();
+        noticiaMock.setId(noticiaId);
+
+        // Simula que el entityManager.find retorna el objeto noticiaMock cuando se llama con noticiaId
+        when(entityManager.find(Noticia.class, noticiaId)).thenReturn(noticiaMock);
+
+        Noticia result = noticiaRepository.findById(noticiaId);
+
+        verify(entityManager, times(1)).find(Noticia.class, noticiaId);
+
+        assertEquals(noticiaMock, result);
     }
 }
