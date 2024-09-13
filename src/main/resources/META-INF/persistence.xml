@@ -7,6 +7,12 @@
         <class>sv.edu.udb.dwfcatedra.repository.domain.Evento</class>
         <class>sv.edu.udb.dwfcatedra.repository.domain.Miembro</class>
         <class>sv.edu.udb.dwfcatedra.repository.domain.Jugador</class>
+        <class>sv.edu.udb.dwfcatedra.repository.domain.Tecnico</class>
+        <class>sv.edu.udb.dwfcatedra.repository.domain.Beneficio</class>
+        <class>sv.edu.udb.dwfcatedra.repository.domain.Plan</class>
+        <class>sv.edu.udb.dwfcatedra.repository.domain.Plantilla</class>
+        <class>sv.edu.udb.dwfcatedra.repository.domain.Suscripcion</class>
+        <class>sv.edu.udb.dwfcatedra.repository.domain.Marca</class>
         <properties>
             <property name="jakarta.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/club_management"/>
             <property name="jakarta.persistence.jdbc.user" value="usuario"/>
