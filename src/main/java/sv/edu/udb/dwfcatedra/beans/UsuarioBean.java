@@ -11,23 +11,4 @@ import java.io.Serializable;
 @RequestScoped
 public class UsuarioBean implements Serializable {
 
-    @PersistenceContext
-    private EntityManager entityManager;
-
-    private Usuario usuario = new Usuario();
-
-    // ID del usuario de prueba
-    private final Long testUserId = 1L; // Cambia esto al ID real del usuario de prueba en tu base de datos
-
-    public Usuario getUsuario() {
-        if (usuario.getId() == null) {
-            // Cargar el usuario de prueba si aún no se ha cargado
-            usuario = entityManager.find(Usuario.class, testUserId);
-        }
-        return usuario;
-    }
-
-    public void setUsuario(Usuario usuario) {
-        this.usuario = usuario;
-    }
 }
