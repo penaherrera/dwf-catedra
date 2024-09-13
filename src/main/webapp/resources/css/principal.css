@@ -51,7 +51,7 @@ a:hover {
 table {
     width: 100%;
     border-collapse: collapse;
-    margin-top: 20px;
+
 }
 
 table th,
@@ -76,7 +76,6 @@ table tbody tr:hover {
 
 /* No news message */
 div {
-    margin-top: 20px;
     text-align: center;
     font-size: 18px;
     color: #66bb6a;
