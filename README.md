@@ -23,7 +23,7 @@ En este ejemplo se utilizará Xampp, una vez activados los servicios, dar click 
 
 ![image](https://github.com/user-attachments/assets/7b4a6cf9-7819-4b07-af45-df3bbe1d689c)
 
-Al abrirse el navegador nos dirigimos al apartado "SQL" o "Importar" y seleccionamos el Script de la Base de Datos "club_management" al finalizar veremos lo siguiente:
+Al abrirse el navegador nos dirigimos al apartado "SQL" o "Importar" y seleccionamos el script de la Base de Datos "club_management" el cual fue compartido en el punto número 5 del documento PDF entregado, al finalizar veremos lo siguiente:
 
 ![image](https://github.com/user-attachments/assets/67d104de-1bc8-457f-8659-073e58c3a1c6)
 
@@ -87,11 +87,13 @@ Al finalizar todos los pasos deberá ejecutar el proyecto nuevamente y el result
 
 ## Descripcion de los Paquetes
 ### beans:
-Descripción
+Contiene las clases beans de la aplicación, se encargan de gestionar la lógica de negocio y la interacción con la vista JSF.
 ### repository:
-Descripción
+Contiene las clases JPA, las cuales se encargarán de interactuar con la base de datos. Estas clases contienen las opreaciones a realizar CRUD y consultas más específicas sobre las entidades.
 ### domain:
-Descripción
+Contiene las entidades, que son las clases que representan los objetos persistentes en la base de datos.
+### servicios:
+Se agregará en la próxima entrega.
 
 ## Funcionalidades: 
 * Gestión de información de equipo de fútbol: Administra la plantilla completa de jugadores y su técnico, la calendarización de partidos y la comunicación con los miembros del club para recibir información sobre los eventos deportivos.
