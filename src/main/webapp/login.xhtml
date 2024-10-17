@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+<h:head>
+    <title>Iniciar Sesion</title>
+    <h:outputStylesheet name="css/loginStyles.css"/>
+</h:head>
+
+<h:body>
+    <h:form>
+        <div class="card" style="background: white; width: 350px;">
+            <!-- Contenedor para centrar imagen y títulos -->
+            <div class="header-container" style="text-align: center;">
+                <h:graphicImage name="images/manguito-fc.png" alt="Logo Institución" style="width: 100px;"/>
+                <h2 class="titulo">Club Deportivo</h2>
+                <h2 class="titulo">Manguito Maracaton</h2>
+            </div>
+
+            <div class="grid ui-fluid">
+                <h3>Ingrese su nombre</h3>
+                <div class="col-12 md:col-4">
+                    <div class="ui-inputgroup">
+                        <div class="ui-inputgroup-addon"><i class="pi pi-user"></i></div>
+                        <p:inputText placeholder="Correo Electrónico" id="nombreInput" value="#{usuarioBean.email}" required="true" />
+                    </div>
+                </div>
+            </div>
+
+            <h3>Ingrese su correo</h3>
+            <div class="col-12 md:col-4">
+                <div class="ui-inputgroup">
+                    <div class="ui-inputgroup-addon"><i class="pi pi-envelope"></i></div>
+                    <p:inputText placeholder="Contraseña" id="email" value="#{usuarioBean.password}" required="true" />
+                </div>
+            </div>
+
+            <div class="button-container">
+                <h:commandButton value="INGRESAR" styleClass="ui-button-raised ui-button-flat" action="#{usuarioBean.ingresarUsuario()}" class="btnEnviar" />
+            </div>
+
+            <div class="button-container">
+                <h:link value="Registrate" outcome="signup" class="btnEnviar"/>
+            </div>
+
+        </div>
+
+        <h:message for="nombreInput" style="color:red;" />
+    </h:form>
+</h:body>
+
+</html>

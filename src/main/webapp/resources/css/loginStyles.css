@@ -1,0 +1,59 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #2e7d32;
+}
+.card {
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 2px 2px 100px rgba(0, 0, 0, 0.1);
+    width: 400px;
+}
+
+.titulo, .subtitulo {
+    color: #333;
+}
+
+.header-container {
+    text-align: center;
+    margin-bottom: 20px;
+}
+.ui-inputgroup {
+    width: 100%;
+}
+input {
+    width: 100%;
+    padding: 10px;
+}
+h2, h3 {
+    text-align: center;
+    color: #fff;
+    font-family: 'Oswald', sans-serif;
+    font-weight: 700;
+}
+.button-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+.btnEnviar {
+    background-color: #66bb6a;
+    color: white;
+    border: none;
+    padding: 14px 30px;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    box-shadow: inset 2px 2px 5px rgba(0, 0, 0, 0.5);
+    transition: .2s;
+    font-family: 'Oswald', sans-serif;
+}
+.btnEnviar:hover {
+    background-color: #2e7d32;
+    box-shadow: inset 2px 2px 5px rgba(0, 0, 0, 0.2);
+}

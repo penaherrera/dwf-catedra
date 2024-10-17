@@ -1,7 +1,11 @@
 package sv.edu.udb.dwfcatedra.repository.domain;
+import lombok.Getter;
+import lombok.Setter;
 
 import jakarta.persistence.*;
 
+@Getter
+@Setter
 @Entity
 public class Usuario {
 
@@ -9,36 +13,16 @@ public class Usuario {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @Column(nullable = false)
     private String nombre;
+
+    @Column(nullable = false)
     private String email;
 
-    // Getter para id
-    public Long getId() {
-        return id;
-    }
+    @Column(nullable = false)
+    private String password;
 
-    // Setter para id
-    public void setId(Long id) {
-        this.id = id;
-    }
+    @Column(nullable = false)
+    private Integer rol;
 
-    // Getter para nombre
-    public String getNombre() {
-        return nombre;
-    }
-
-    // Setter para nombre
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
-
-    // Getter para email
-    public String getEmail() {
-        return email;
-    }
-
-    // Setter para email
-    public void setEmail(String email) {
-        this.email = email;
-    }
 }
