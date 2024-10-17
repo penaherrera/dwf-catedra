@@ -3,52 +3,47 @@
         "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
-      xmlns:f="http://xmlns.jcp.org/jsf/core">
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
 
 <h:head>
     <title>Noticias</title>
     <!-- Enlace al archivo CSS -->
     <h:outputStylesheet library="css" name="principal.css"/>
+    <h:outputStylesheet library="css" name="indexStyles.css"/>
 </h:head>
 <h:body>
     <!-- Navbar -->
-    <div class="navbar">
-        <h:link value="Inicio" outcome="index"/>
-        <h:link value="Eventos" outcome="eventos" />
-        <h:link value="Plantilla" outcome="plantilla" />
-        <h:link value="Descuentos" outcome="descuentos" />
-        <h:link value="Administrar" outcome="administrar"/>
-    </div>
+    <ui:include src="/resources/components/navbar.xhtml" />
 
     <!-- Contenido de la página -->
     <div class="container">
         <h2>Noticias</h2>
 
-        <h:dataTable value="#{noticiaBean.noticias}" var="noticia">
-            <h:column>
-                <f:facet name="header">Título</f:facet>
-                <h:outputText value="#{noticia.titulo}" />
-            </h:column>
-            <h:column>
-                <f:facet name="header">Contenido</f:facet>
-                <h:outputText value="#{noticia.descripcion}" />
-            </h:column>
-            <h:column>
-                <f:facet name="header">Fecha</f:facet>
-                <h:outputText value="#{noticia.fecha}" />
-            </h:column>
-        </h:dataTable>
+        <h:form>
+            <div class="row">
+                <ui:repeat value="#{noticiaBean.noticias}" var="noticia" varStatus="status">
+                    <div class="col-md-4">
+                        <div class="card">
+                            <h5 class="card-title">#{noticia.titulo}</h5>
+                            <p class="card-description">#{noticia.descripcion}</p>
+                            <div class="card-footer">Fecha: #{noticiaBean.formatFecha(noticia.fecha)}</div>
+                        </div>
+                    </div>
+                </ui:repeat>
+            </div>
 
-        <!-- Mensaje si no hay noticias -->
-        <h:panelGroup rendered="#{empty noticiaBean.noticias}">
-            <h:outputText value="No hay noticias disponibles" />
-        </h:panelGroup>
+            <!-- Mensaje si no hay noticias -->
+            <h:panelGroup rendered="#{empty noticiaBean.noticias}" styleClass="no-news-message">
+                <h:outputText value="No hay noticias disponibles" />
+            </h:panelGroup>
+
+            <h:commandButton value="Anterior" action="#{noticiaBean.prevPage}" disabled="#{noticiaBean.currentPage == 0}"/>
+            <h:commandButton value="Siguiente" action="#{noticiaBean.nextPage}" disabled="#{(noticiaBean.currentPage + 1) * noticiaBean.rowsPerPage >= noticiaBean.totalRows}"/>
+        </h:form>
 
     </div>
 
-    <footer>
-        <h5>2024 - Club deportivo UDB. Todos los derechos reservados</h5>
-    </footer>
-
+    <ui:include src="/resources/components/footer.xhtml" />
 </h:body>
 </html>

@@ -10,22 +10,15 @@
     <h:outputStylesheet library="css" name="principal.css"/>
 </h:head>
 <h:body>
-    <div class="navbar">
-        <h:link value="Inicio" outcome="index"/>
-        <h:link value="Eventos" outcome="eventos" />
-        <h:link value="Plantilla" outcome="plantilla" />
-        <h:link value="Descuentos" outcome="descuentos" />
-        <h:link value="Administrar" outcome="administrar"/>
-    </div>
+
+    <ui:include src="/resources/components/navbar.xhtml" />
 
     <div class="container">
     <h2>Plantilla</h2>
     <p>Aquí irán los jugadores y el cuerpo tecnico.</p>
     </div>
 
+    <ui:include src="/resources/components/footer.xhtml" />
 
-    <footer>
-        <h5>2024 - Club deportivo UDB. Todos los derechos reservados</h5>
-    </footer>
 </h:body>
 </html>

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+<h:head>
+    <title>Administrar Jugadores</title>
+    <!-- Enlace al archivo CSS -->
+    <h:outputStylesheet library="css" name="principal.css"/>
+    <h:outputStylesheet library="css" name="jugadoresAdmin.css"/>
+</h:head>
+
+<h:body>
+    <!-- Navbar -->
+    <ui:include src="/resources/components/navbar.xhtml" />
+
+    <!-- Contenido de la página -->
+    <div class="container">
+        <h1>Administrar Jugadores</h1>
+
+        <!-- Tabla para listar jugadores con enlaces para edición -->
+        <h:dataTable value="#{miembroBean.jugadores}" var="jugador">
+            <!-- Columna para mostrar el nombre del jugador -->
+            <h:column>
+                <f:facet name="header">
+                    <div class="table-header" style="display: flex; justify-content: space-between;">
+                        <span>Nombre</span>
+                        <!-- Enlace para crear un nuevo jugador, al lado del nombre -->
+                        <h:link value="Crear Jugador +" outcome="crearJugador" />
+                    </div>
+                </f:facet>
+                <!-- Mostrar el nombre del jugador -->
+                <span class="jugador-nombre">#{jugador.nombre}</span>
+            </h:column>
+
+            <!-- Columna para el botón de edición y eliminación al final de cada fila -->
+            <h:column>
+                <f:facet name="header">
+                    <span>Acciones</span>
+                </f:facet>
+                <h:form>
+                    <h:commandLink value="Editar" action="#{miembroBean.updateMiembro('jugador')}" />
+                    <h:commandLink value="Eliminar" action="#{miembroBean.eliminarMiembro(jugador.id, 'Jugador')}"/>
+                </h:form>
+            </h:column>
+        </h:dataTable>
+    </div>
+
+    <ui:include src="/resources/components/footer.xhtml" />
+
+</h:body>
+
+</html>
