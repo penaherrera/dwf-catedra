@@ -6,17 +6,25 @@
     padding: 20px;
     max-width: 600px;
     margin: 0 auto;
+    text-align: center; /* Centra el contenido del contenedor */
 }
 
 /* Estilo para los campos del formulario */
 .form-group {
     margin-bottom: 15px;
+    text-align: left; /* Alinea las etiquetas y campos a la izquierda */
+}
+
+/* Estilo adicional para centrar el campo de fecha */
+.form-group.text-center {
+    text-align: center; /* Centrar el contenido dentro del grupo de formularios */
 }
 
 .form-group h:outputLabel {
     display: block;
     font-weight: bold;
     margin-bottom: 5px;
+    text-align: center; /* Asegura que la etiqueta también esté centrada */
 }
 
 .form-control {
@@ -33,9 +41,21 @@
     box-shadow: 0 0 0 0.2rem rgba(38, 143, 255, 0.25);
 }
 
+/* Estilo para el calendario */
+.p-calendar {
+    display: inline-block; /* Hace que el calendario se comporte como un elemento en línea */
+    width: auto; /* Permite que el calendario tome su ancho automáticamente */
+}
+
+/* Ajuste en el estilo del calendario */
+.p-calendar .ui-inputfield {
+    text-align: center; /* Centra el texto dentro del campo de entrada */
+}
+
 /* Estilo para los botones */
 .form-actions {
     margin-top: 20px;
+    text-align: center; /* Centrar los botones */
 }
 
 .btn {
@@ -58,7 +78,7 @@
 .btn-secondary {
     background-color: #6c757d;
     color: white;
-    margin-left: 10px;
+    margin-left: 10px; /* Espacio entre botones */
 }
 
 .btn-secondary:hover {

@@ -1,31 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
       xmlns:f="http://xmlns.jcp.org/jsf/core">
 
 <h:head>
-    <title>Editar Noticia</title>
+    <title>Crear Noticia</title>
     <h:outputStylesheet library="css" name="editarNoticia.css"/>
     <h:outputStylesheet library="css" name="principal.css"/>
 </h:head>
 
 <h:body>
-    <!-- Metadata para pasar parámetros y cargar la noticia -->
-    <f:metadata>
-        <f:viewParam name="id" value="#{noticiaBean.id}" required="true"/>
-        <!-- Ejecutar loadNoticia antes de renderizar la vista -->
-        <f:event type="preRenderView" listener="#{noticiaBean.loadNoticia}" />
-    </f:metadata>
 
     <ui:include src="/resources/components/navbar.xhtml" />
 
     <div class="container">
-        <h1>Editar Noticia</h1>
+        <h1>Crear Noticia</h1>
 
         <div class="form-container">
             <h:form>
-                <h:inputHidden id="noticiaId" value="#{noticiaBean.id}" />
 
                 <div class="form-group">
                     <h:outputLabel for="titulo" value="Título:" />
@@ -49,7 +44,7 @@
 
                 <!-- Botones de acción -->
                 <div class="form-actions">
-                    <h:commandButton value="Guardar" action="#{noticiaBean.update}" styleClass="btn btn-primary"/>
+                    <h:commandButton value="Guardar" action="#{noticiaBean.createNoticia}" styleClass="btn btn-primary"/>
                     <h:link value="Cancelar" outcome="noticiasAdmin"/>
                 </div>
             </h:form>

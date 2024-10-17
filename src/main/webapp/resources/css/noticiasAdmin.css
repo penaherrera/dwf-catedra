@@ -1,100 +1,33 @@
-/* General Styles */
-body {
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
-    margin: 0;
-    padding: 0;
+/* Estilos para que el texto Título y Crear Noticia tengan letras blancas */
+.table-header {
+    color: white; /* Letra blanca */
 }
 
-.navbar {
-    background-color: #343a40;
-    color: #fff;
-    padding: 10px;
+/* Quitar el estilo del enlace Crear Noticia */
+.table-header a {
+    color: white; /* Cambiar el color del enlace a blanco */
+    text-decoration: none; /* Quitar el subrayado del enlace */
 }
 
-.navbar a {
-    color: #fff;
-    padding: 10px;
-    text-decoration: none;
+.table-header a:hover {
+    color: #ccc; /* Cambiar el color del enlace cuando el cursor esté encima (opcional) */
 }
 
-.navbar a:hover {
-    background-color: #495057;
+/* Título de la noticia en color verde */
+.noticia-titulo {
+    color: green;
+    font-weight: bold; /* Opcional, para hacer el texto más resaltado */
 }
 
-
-.container {
-    width: 80%;
-    margin: 0 auto;
-    padding: 20px;
-}
-
-h1 {
-    color: #333;
-}
-
-a {
-    color: #007bff;
-    text-decoration: none;
-}
-
-a:hover {
-    text-decoration: underline;
-}
-
-/* Navbar Styles */
-.navbar {
-    background-color: #343a40;
-    color: #fff;
-    padding: 10px;
-}
-
-.navbar a {
-    color: #fff;
-    padding: 10px;
-    text-decoration: none;
-}
-
-.navbar a:hover {
-    background-color: #495057;
-}
-
-/* Form Styles */
-form {
-    background: #f8f9fa;
-    padding: 20px;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-form div {
-    margin-bottom: 15px;
-}
-
-label {
-    display: block;
-    margin-bottom: 5px;
-}
-
-input[type="text"],
-textarea {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ced4da;
-    border-radius: 5px;
-}
-
-button {
-    background-color: #007bff;
+/* Botón para editar noticia */
+h\:commandButton {
+    background-color: #4CAF50; /* Verde */
     color: white;
+    padding: 5px 10px;
     border: none;
-    padding: 10px 15px;
-    border-radius: 5px;
     cursor: pointer;
-    font-size: 16px;
-    margin-right: 10px;
 }
 
-button:hover {
-    background-color: #0056b3;
+h\:commandButton:hover {
+    background-color: #45a049; /* Un tono más oscuro al pasar el mouse */
 }
