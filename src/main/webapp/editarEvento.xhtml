@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+<h:head>
+    <title>Editar Evento</title>
+    <h:outputStylesheet library="css" name="editarEvento.css"/>
+    <h:outputStylesheet library="css" name="principal.css"/>
+</h:head>
+
+<h:body>
+    <!-- Metadata para pasar parámetros y cargar el evento -->
+    <f:metadata>
+        <f:viewParam name="id" value="#{eventoBean.id}" required="true"/>
+        <!-- Ejecutar loadEvento antes de renderizar la vista -->
+        <f:event type="preRenderView" listener="#{eventoBean.loadEvento}" />
+    </f:metadata>
+
+    <ui:include src="/resources/components/navbar.xhtml" />
+
+    <div class="container">
+        <h1>Editar Evento</h1>
+
+        <div class="form-container">
+            <h:form>
+                <h:inputHidden id="eventoId" value="#{eventoBean.id}" />
+
+                <div class="form-group">
+                    <h:outputLabel for="nombre" value="Nombre:" />
+                    <h:inputText id="nombre" value="#{eventoBean.evento.nombre}" required="true"
+                                 styleClass="form-control"/>
+                </div>
+
+                <div class="form-group">
+                    <h:outputLabel for="descripcion" value="Descripción:" />
+                    <h:inputTextarea id="descripcion" value="#{eventoBean.evento.descripcion}" required="true"
+                                     styleClass="form-control"/>
+                </div>
+
+                <div class="form-group">
+                    <h:outputLabel for="fecha" value="Fecha:" />
+                    <h:inputText id="fecha" value="#{eventoBean.evento.fecha}" required="true"
+                                 styleClass="form-control">
+                        <f:convertDateTime pattern="yyyy-MM-dd" />
+                    </h:inputText>
+                </div>
+
+                <div class="form-group">
+                    <h:outputLabel for="lugar" value="Lugar:" />
+                    <h:inputText id="lugar" value="#{eventoBean.evento.lugar}" required="true"
+                                 styleClass="form-control"/>
+                </div>
+
+                <!-- Botones de acción -->
+                <div class="form-actions">
+                    <h:commandButton value="Guardar" action="#{eventoBean.update}" styleClass="btn btn-primary"/>
+                    <h:link value="Cancelar" outcome="eventosAdmin"/>
+                </div>
+            </h:form>
+        </div>
+    </div>
+
+    <ui:include src="/resources/components/footer.xhtml" />
+</h:body>
+</html>

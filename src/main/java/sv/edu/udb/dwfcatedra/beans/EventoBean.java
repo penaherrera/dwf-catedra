@@ -19,7 +19,7 @@ import sv.edu.udb.dwfcatedra.service.EventoService;
 
 @Named
 @ViewScoped
-public class EventosBean implements Serializable {
+public class EventoBean implements Serializable {
 
     @Inject
     private EventoService eventoService;
