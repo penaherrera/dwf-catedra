@@ -9,7 +9,7 @@
     align-items: center;
 }
 
-/* Enlace para "Crear Noticia" con estilo de botón */
+/* Enlace para "Crear Evento" con estilo de botón */
 .table-header a {
     color: white; /* Texto blanco */
     text-decoration: none; /* Sin subrayado */
@@ -24,8 +24,8 @@
     background-color: #45a049; /* Color más oscuro al pasar el mouse */
 }
 
-/* Título de la noticia en color verde */
-.noticia-titulo {
+/* Título del evento en color verde */
+.evento-nombre {
     color: green;
     font-weight: bold;
     padding: 10px 0;
@@ -64,17 +64,17 @@
 }
 
 /* Ajustes adicionales para la tabla */
-.noticias-table {
+.eventos-table {
     width: 100%; /* Asegura que la tabla ocupe todo el ancho del contenedor */
     border-collapse: collapse; /* Elimina espacios entre celdas */
     margin-top: 20px;
 }
 
-.noticias-table .acciones-column {
+.eventos-table .acciones-column {
     text-align: center; /* Centra las acciones */
 }
 
-.noticias-table h\:column {
+.eventos-table h\:column {
     padding: 10px;
     border-bottom: 1px solid #dee2e6; /* Línea divisoria entre filas */
 }

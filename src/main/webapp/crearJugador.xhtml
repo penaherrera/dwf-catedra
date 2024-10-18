@@ -8,7 +8,7 @@
 
 <h:head>
     <title>Crear Jugador</title>
-    <h:outputStylesheet library="css" name="editarJugador.css"/>
+    <h:outputStylesheet library="css" name="editarNoticia.css"/>
     <h:outputStylesheet library="css" name="principal.css"/>
 </h:head>
 
@@ -54,8 +54,8 @@
 
                 <!-- Botones de acción -->
                 <div class="form-actions">
-                    <h:commandButton value="Guardar" action="#{miembroBean.createJugador}" styleClass="btn btn-primary"/>
-                    <h:link value="Cancelar" outcome="jugadoresAdmin"/>
+                    <h:commandButton value="Guardar" action="#{miembroBean.createJugador}" styleClass="btn btn-guardar"/>
+                    <h:link value="Cancelar" outcome="jugadoresAdmin" styleClass="btn btn-cancelar"/>
                 </div>
             </h:form>
         </div>

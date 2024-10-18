@@ -6,7 +6,7 @@
 
 <h:head>
     <title>Editar Evento</title>
-    <h:outputStylesheet library="css" name="editarEvento.css"/>
+    <h:outputStylesheet library="css" name="editarNoticia.css"/>
     <h:outputStylesheet library="css" name="principal.css"/>
 </h:head>
 
@@ -55,8 +55,8 @@
 
                 <!-- Botones de acción -->
                 <div class="form-actions">
-                    <h:commandButton value="Guardar" action="#{eventoBean.update}" styleClass="btn btn-primary"/>
-                    <h:link value="Cancelar" outcome="eventosAdmin"/>
+                    <h:commandButton value="Guardar" action="#{eventoBean.update}" styleClass="btn btn-guardar"/>
+                    <h:link value="Cancelar" outcome="eventosAdmin" styleClass="btn btn-cancelar"/>
                 </div>
             </h:form>
         </div>

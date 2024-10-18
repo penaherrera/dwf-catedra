@@ -20,29 +20,31 @@
             </div>
 
             <div class="grid ui-fluid">
-                <h3>Ingrese su nombre</h3>
+                <h3>Ingrese su correo</h3>
                 <div class="col-12 md:col-4">
                     <div class="ui-inputgroup">
-                        <div class="ui-inputgroup-addon"><i class="pi pi-user"></i></div>
+                        <div class="ui-inputgroup-addon"><i class="pi pi-envelope"></i></div>
                         <p:inputText placeholder="Correo Electrónico" id="nombreInput" value="#{usuarioBean.email}" required="true" />
                     </div>
                 </div>
             </div>
 
-            <h3>Ingrese su correo</h3>
+        <div class="grid ui-fluid">
+            <h3>Ingrese su contraseña</h3>
             <div class="col-12 md:col-4">
                 <div class="ui-inputgroup">
-                    <div class="ui-inputgroup-addon"><i class="pi pi-envelope"></i></div>
-                    <p:inputText placeholder="Contraseña" id="email" value="#{usuarioBean.password}" required="true" />
+                    <div class="ui-inputgroup-addon"><i class="pi pi-lock"></i></div>
+                    <p:password placeholder="Contraseña" id="email" value="#{usuarioBean.password}" required="true" />
                 </div>
             </div>
+        </div>
 
             <div class="button-container">
                 <h:commandButton value="INGRESAR" styleClass="ui-button-raised ui-button-flat" action="#{usuarioBean.ingresarUsuario()}" class="btnEnviar" />
             </div>
 
             <div class="button-container">
-                <h:link value="Registrate" outcome="signup" class="btnEnviar"/>
+                <h:link value="REGISTRATE" styleClass="ui-button-raised ui-button-flat" outcome="signup" class="btnEnviar"/>
             </div>
 
         </div>

@@ -9,7 +9,7 @@
     <title>Administrar Tecnicos</title>
     <!-- Enlace al archivo CSS -->
     <h:outputStylesheet library="css" name="principal.css"/>
-    <h:outputStylesheet library="css" name="tecnicosAdmin.css"/>
+    <h:outputStylesheet library="css" name="tecnicosAdminStyles.css"/>
 </h:head>
 
 <h:body>
@@ -41,8 +41,8 @@
                     <span>Acciones</span>
                 </f:facet>
                 <h:form>
-                    <h:commandLink value="Editar" action="#{miembroBean.redirectUpdateMiembro(tecnico.id, 'tecnico')}" />
-                    <h:commandLink value="Eliminar" action="#{miembroBean.eliminarMiembro(tecnico.id, 'tecnico')}"/>
+                    <h:commandLink value="Editar" action="#{miembroBean.redirectUpdateMiembro(tecnico.id, 'tecnico')}"  styleClass="btn-editar"/>
+                    <h:commandLink value="Eliminar" action="#{miembroBean.eliminarMiembro(tecnico.id, 'tecnico')}" styleClass="btn-eliminar"/>
                 </h:form>
             </h:column>
         </h:dataTable>

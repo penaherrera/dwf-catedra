@@ -1,104 +1,36 @@
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
-    margin: 0;
-    padding: 0;
-}
-
-.navbar {
-    background-color: #343a40;
-    color: #fff;
-    padding: 10px;
-}
-
-.navbar a {
-    color: #fff;
-    padding: 10px;
-    text-decoration: none;
-}
-
-.navbar a:hover {
-    background-color: #495057;
-}
-
-
-.container {
-    width: 80%;
-    margin: auto;
-    padding: 20px;
-}
-
-h1 {
-    text-align: center;
-    color: #333;
-    margin-bottom: 30px;
-}
-
+/* Card Styles */
 .card {
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border: 2px solid #dee2e6;
+    border-radius: 5px;
+    padding: 15px;
     margin-bottom: 20px;
-    padding: 20px;
+    background-color: #ffffff;
+    transition: box-shadow 0.3s ease;
+    max-width: 400px;
+    margin: 0 auto 20px auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     text-align: center;
-    transition: box-shadow 0.3s ease-in-out;
 }
 
 .card:hover {
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
+/* Link dentro de las cards */
 .card-link {
-    text-decoration: none;
-    color: #007bff;
     font-size: 18px;
+    color: #66bb6a;
+    text-decoration: none;
     font-weight: bold;
+    display: inline-block;
+    padding: 10px 0;
+    transition: color 0.3s ease;
+    text-align: center;
 }
 
 .card-link:hover {
-    color: #0056b3;
-    text-decoration: underline;
-}
-footer {
-    background-color: #2e7d32;
-    color: #fff;
-    padding: 20px;
-    text-align: center;
-    width: 100%;
-    box-shadow: 0px -2px 5px rgba(0, 0, 0, 0.1);
-    margin-top: 20px;
-}
-
-footer h5 {
-    margin: 0;
-    font-size: 16px;
-    font-weight: normal;
-}
-
-footer h5::before {
-    content: "\00A9 ";
-}
-
-footer a {
-    color: #a5d6a7;
-    text-decoration: none;
-}
-
-footer a:hover {
-    text-decoration: underline;
-}
-
-html, body {
-    height: 100%;
-    margin: 0;
-    padding: 0;
-}
-
-body {
-    display: flex;
-    flex-direction: column;
-}
-
-.container {
-    flex: 1;
+    color: #388e3c;
 }

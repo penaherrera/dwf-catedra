@@ -8,7 +8,7 @@
 
 <h:head>
     <title>Crear Técnico</title>
-    <h:outputStylesheet library="css" name="editarTecnico.css"/>
+    <h:outputStylesheet library="css" name="editarNoticia.css"/>
     <h:outputStylesheet library="css" name="principal.css"/>
 </h:head>
 
@@ -48,8 +48,8 @@
 
                 <!-- Botones de acción -->
                 <div class="form-actions">
-                    <h:commandButton value="Guardar" action="#{miembroBean.createTecnico}" styleClass="btn btn-primary"/>
-                    <h:link value="Cancelar" outcome="tecnicosAdmin"/>
+                    <h:commandButton value="Guardar" action="#{miembroBean.createTecnico}" styleClass="btn btn-guardar"/>
+                    <h:link value="Cancelar" outcome="tecnicosAdmin" styleClass="btn btn-cancelar"/>
                 </div>
             </h:form>
         </div>

@@ -84,7 +84,6 @@ public class MiembroBean implements Serializable{
 
     @PostConstruct
     public void init() {
-        System.out.println("en init getTipoMiembro(): " + getTipoMiembro());
         if (this.id != null || this.tipoMiembro != null) {
             loadMiembro();
         } else {
@@ -119,11 +118,7 @@ public class MiembroBean implements Serializable{
         jugadores = jugadorService.getAllJugadores();
         tecnicos = tecnicoService.getAllTecnicos();
 
-        // Paginación inicial para jugadores y técnicos
-        totalRowsJugadores = jugadores.size();
-        totalRowsTecnicos = tecnicos.size();
-        paginateJugadores();
-        paginateTecnicos();
+
     }
 
     // Métodos de paginación para jugadores

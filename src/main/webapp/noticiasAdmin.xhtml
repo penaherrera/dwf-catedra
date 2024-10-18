@@ -21,32 +21,26 @@
     <div class="container">
         <h1>Administrar Noticias</h1>
 
-        <!-- Tabla para listar noticias con enlaces para edición -->
-        <h:dataTable value="#{noticiaBean.noticias}" var="noticia">
+        <h:dataTable value="#{noticiaBean.noticias}" var="noticia" styleClass="noticias-table">
             <!-- Columna para mostrar el título en verde -->
             <h:column>
                 <f:facet name="header">
-                    <div class="table-header" style="display: flex; justify-content: space-between;">
+                    <div class="table-header">
                         <span>Título</span>
-                        <!-- Enlace para crear una nueva noticia, al lado del título -->
                         <h:link value="Crear Noticia +" outcome="crearNoticia" />
                     </div>
                 </f:facet>
-                <!-- Mostrar el título en verde -->
                 <span class="noticia-titulo">#{noticia.titulo}</span>
             </h:column>
 
-            <!-- Columna para el botón de edición al final de cada fila -->
-            <h:column>
+            <!-- Columna para las acciones (Editar y Eliminar) -->
+            <h:column styleClass="acciones-column">
                 <f:facet name="header">
                     <span>Acciones</span>
                 </f:facet>
                 <h:form>
-                    <h:commandLink value="Editar" action="#{noticiaBean.redirectUpdateNoticia(noticia.id)}" />
-
-
-                    <h:commandLink value="Eliminar" action="#{noticiaBean.eliminarNoticia(noticia.id)}"/>
-
+                    <h:commandLink value="Editar" action="#{noticiaBean.redirectUpdateNoticia(noticia.id)}" styleClass="btn-editar" />
+                    <h:commandLink value="Eliminar" action="#{noticiaBean.eliminarNoticia(noticia.id)}" styleClass="btn-eliminar" />
                 </h:form>
             </h:column>
         </h:dataTable>

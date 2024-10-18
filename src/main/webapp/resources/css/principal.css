@@ -134,32 +134,32 @@ footer {
     padding: 10px;
     position: relative;
     width: 100%;
-    margin-top: auto; /* Esto asegura que el footer se mantenga al final */
+    margin-top: auto;
 }
 
 /* Estilo para los botones de paginación */
 .btn-paginacion {
-    background-color: #007bff; /* Color azul */
+    background-color: #66bb6a;
     border: none;
     color: white;
-    padding: 10px 15px; /* Espaciado */
+    padding: 10px 15px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
-    font-size: 16px; /* Tamaño de fuente */
-    margin: 5px; /* Espacio entre botones */
-    border-radius: 4px; /* Bordes redondeados */
-    cursor: pointer; /* Cambia el cursor al pasar por encima */
-    transition: background-color 0.3s; /* Efecto de transición */
+    font-size: 16px;
+    margin: 5px;
+    border-radius: 4px;
+    cursor: pointer; /
+    transition: background-color 0.3s;
 }
 
 .btn-paginacion:hover {
-    background-color: #0056b3; /* Color azul más oscuro al pasar el mouse */
+    background-color: #2e7d32;
 }
 
 .btn-paginacion:disabled {
-    background-color: #c0c0c0; /* Color gris para el botón deshabilitado */
-    cursor: not-allowed; /* Cambia el cursor para indicar que está deshabilitado */
+    background-color: #c0c0c0;
+    cursor: not-allowed;
 }
 
 

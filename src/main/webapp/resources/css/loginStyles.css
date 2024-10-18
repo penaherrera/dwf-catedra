@@ -43,6 +43,7 @@ h2, h3 {
 }
 .btnEnviar {
     background-color: #66bb6a;
+    text-decoration: none;
     color: white;
     border: none;
     padding: 14px 30px;

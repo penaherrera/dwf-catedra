@@ -9,7 +9,7 @@
     <title>Administrar Eventos</title>
     <!-- Enlace al archivo CSS -->
     <h:outputStylesheet library="css" name="principal.css"/>
-    <h:outputStylesheet library="css" name="eventosAdmin.css"/>
+    <h:outputStylesheet library="css" name="jugadoresAdmin.css"/>
 </h:head>
 
 <h:body>
@@ -41,8 +41,8 @@
                     <span>Acciones</span>
                 </f:facet>
                 <h:form>
-                    <h:commandLink value="Editar" action="#{eventoBean.redirectUpdateEvento(evento.id)}" />
-                    <h:commandLink value="Eliminar" action="#{eventoBean.eliminarEvento(evento.id)}"/>
+                    <h:commandLink value="Editar" action="#{eventoBean.redirectUpdateEvento(evento.id)}" styleClass="btn-editar"/>
+                    <h:commandLink value="Eliminar" action="#{eventoBean.eliminarEvento(evento.id)}" styleClass="btn-eliminar"/>
                 </h:form>
             </h:column>
         </h:dataTable>

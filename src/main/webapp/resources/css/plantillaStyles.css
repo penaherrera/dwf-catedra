@@ -1,67 +1,63 @@
-/* No news message */
 div {
     text-align: center;
     font-size: 18px;
     color: #66bb6a;
 }
 
-/* Card Styles */
 .card {
-    border: 2px solid #dee2e6; /* Aumentar el grosor del borde */
+    border: 2px solid #dee2e6;
     border-radius: 5px;
-    padding: 15px; /* Aumentar el padding para más grosor */
+    padding: 10px;
     transition: box-shadow 0.3s ease;
     background-color: #ffffff;
-    overflow: hidden; /* Evita que el contenido sobresalga de la card */
-    text-align: left; /* Alinea el texto a la izquierda */
+    overflow: hidden;
+    text-align: left;
 }
 
 .small-card {
-    width: 100%; /* Asegura que la card ocupe el 100% de su contenedor */
-    max-width: 150px; /* Limita el ancho de las cards */
-    margin: 0; /* Elimina margen automático */
+    width: 225px;
+    height: 400px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.card-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .card-img-top {
-    width: 100%; /* Asegura que la imagen ocupe todo el ancho de la card */
-    height: 70px; /* Reducir la altura de las imágenes */
-    object-fit: cover; /* Mantiene la proporción de la imagen y recorta el resto */
-    border-top-left-radius: 5px; /* Bordes redondeados en la parte superior */
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-top-left-radius: 5px;
     border-top-right-radius: 5px;
 }
 
-.card:hover {
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-
 .card-title {
-    font-size: 14px; /* Reduce el tamaño de la fuente para el título */
-    font-weight: bold;
-    color: #66bb6a;
+    font-size: 16px;
 }
 
 .card-description {
-    font-size: 12px; /* Reduce el tamaño de la fuente para la descripción */
-    color: #333333;
+    font-size: 14px;
 }
 
-/* No news message */
 .no-news-message {
     text-align: center;
     font-size: 18px;
     color: #66bb6a;
 }
 
-/* Flexbox */
 .d-flex {
     display: flex;
 }
 
 .flex-wrap {
-    flex-wrap: wrap; /* Permite que los elementos se envuelvan a la siguiente línea */
+    flex-wrap: wrap;
 }
 
-/* Espaciado */
 .p-2 {
-    padding: 0.5rem; /* Espaciado entre las cards */
+    padding: 0.5rem;
 }

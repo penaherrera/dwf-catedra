@@ -66,21 +66,23 @@
     font-size: 16px;
 }
 
-.btn-primary {
-    background-color: #007bff;
+/* Estilo para el botón "Guardar" */
+.btn-guardar {
+    background-color: #4CAF50; /* Verde */
     color: white;
 }
 
-.btn-primary:hover {
-    background-color: #0056b3;
+.btn-guardar:hover {
+    background-color: #45a049; /* Verde oscuro al pasar el mouse */
 }
 
-.btn-secondary {
-    background-color: #6c757d;
+/* Estilo para el botón "Cancelar" */
+.btn-cancelar {
+    background-color: #f44336; /* Rojo para el cancelar */
     color: white;
     margin-left: 10px; /* Espacio entre botones */
 }
 
-.btn-secondary:hover {
-    background-color: #5a6268;
+.btn-cancelar:hover {
+    background-color: #e53935; /* Rojo oscuro al pasar el mouse */
 }
