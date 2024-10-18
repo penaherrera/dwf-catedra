@@ -39,8 +39,8 @@
             <h:outputText value="No hay eventos disponibles" />
          </h:panelGroup>
 
-         <h:commandButton value="Anterior" action="#{eventoBean.prevPage}" disabled="#{eventoBean.currentPage == 0}"/>
-         <h:commandButton value="Siguiente" action="#{eventoBean.nextPage}" disabled="#{(eventoBean.currentPage + 1) * eventoBean.rowsPerPage >= eventoBean.totalRows}"/>
+         <h:commandButton value="Anterior" action="#{eventoBean.prevPage}" disabled="#{eventoBean.currentPage == 0}" styleClass="btn-paginacion"/>
+         <h:commandButton value="Siguiente" action="#{eventoBean.nextPage}" disabled="#{(eventoBean.currentPage + 1) * eventoBean.rowsPerPage >= eventoBean.totalRows}" styleClass="btn-paginacion"/>
       </h:form>
 
    </div>

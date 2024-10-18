@@ -41,8 +41,8 @@
                     <span>Acciones</span>
                 </f:facet>
                 <h:form>
-                    <h:commandLink value="Editar" action="#{miembroBean.updateMiembro('jugador')}" />
-                    <h:commandLink value="Eliminar" action="#{miembroBean.eliminarMiembro(jugador.id, 'Jugador')}"/>
+                    <h:commandLink value="Editar" action="#{miembroBean.redirectUpdateMiembro(jugador.id, 'jugador')}" />
+                    <h:commandLink value="Eliminar" action="#{miembroBean.eliminarMiembro(jugador.id, 'jugador')}" />
                 </h:form>
             </h:column>
         </h:dataTable>

@@ -10,7 +10,7 @@
     <title>Plantilla</title>
     <!-- Enlace al archivo CSS -->
     <h:outputStylesheet library="css" name="principal.css"/>
-    <h:outputStylesheet library="css" name="indexStyles.css"/>
+    <h:outputStylesheet library="css" name="plantillaStyles.css"/>
 </h:head>
 
 <h:body>
@@ -24,14 +24,17 @@
         <!-- Sección de Jugadores -->
         <h3>Jugadores</h3>
         <h:form>
-            <div class="row">
+            <div class="d-flex flex-wrap"> <!-- Cambiado a d-flex flex-wrap -->
                 <ui:repeat value="#{miembroBean.jugadores}" var="jugador" varStatus="status">
-                    <div class="col-md-4">
-                        <div class="card">
-                            <h5 class="card-title">#{jugador.nombre} (#{jugador.apodo})</h5>
-                            <p class="card-description">Posición: #{jugador.posicion}</p>
-                            <p class="card-description">Edad: #{jugador.edad}</p>
-                            <p class="card-description">Dorsal: #{jugador.dorsal}</p>
+                    <div class="col-md-3 p-2"> <!-- Ajusta la columna según el tamaño deseado -->
+                        <div class="card small-card">
+                            <img src="resources/images/manguito-fc.png" alt="Foto de #{jugador.nombre}" class="card-img-top"/>
+                            <div class="card-body">
+                                <h5 class="card-title">#{jugador.nombre} (#{jugador.apodo})</h5>
+                                <p class="card-description">Posición: #{jugador.posicion}</p>
+                                <p class="card-description">Edad: #{jugador.edad}</p>
+                                <p class="card-description">Dorsal: #{jugador.dorsal}</p>
+                            </div>
                         </div>
                     </div>
                 </ui:repeat>
@@ -47,13 +50,16 @@
         <!-- Sección de Técnicos -->
         <h3>Cuerpo Técnico</h3>
         <h:form>
-            <div class="row">
+            <div class="d-flex flex-wrap"> <!-- Cambiado a d-flex flex-wrap -->
                 <ui:repeat value="#{miembroBean.tecnicos}" var="tecnico" varStatus="status">
-                    <div class="col-md-4">
-                        <div class="card">
-                            <h5 class="card-title">#{tecnico.nombre} (#{tecnico.apodo})</h5>
-                            <p class="card-description">Cargo: #{tecnico.cargo}</p>
-                            <p class="card-description">Edad: #{tecnico.edad}</p>
+                    <div class="col-md-3 p-2"> <!-- Ajusta la columna según el tamaño deseado -->
+                        <div class="card small-card">
+                            <img src="resources/images/manguito-fc.png" alt="Foto de #{tecnico.nombre}" class="card-img-top"/>
+                            <div class="card-body">
+                                <h5 class="card-title">#{tecnico.nombre} (#{tecnico.apodo})</h5>
+                                <p class="card-description">Cargo: #{tecnico.cargo}</p>
+                                <p class="card-description">Edad: #{tecnico.edad}</p>
+                            </div>
                         </div>
                     </div>
                 </ui:repeat>

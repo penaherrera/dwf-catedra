@@ -40,6 +40,7 @@ public class JugadorRepository {
 
     // Obtener un jugador por ID
     public Jugador findById(Long id) {
+        System.out.println("en Repository ste es el id: " + id);
         return entityManager.find(Jugador.class, id);
     }
 }

@@ -24,9 +24,10 @@ public class Miembro {
     @Column(nullable = false)
     private String nombre;
 
-    @Column(nullable = false)
+
+    @Column(name = "APODO", nullable = false)
     private String apodo;
 
-    @Column(nullable = false)
+    @Column()
     private int edad;
 }

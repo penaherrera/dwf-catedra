@@ -43,17 +43,55 @@ a:hover {
     background-color: #2e7d32;
     color: #fff;
     padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-.navbar a {
+.navbar-left, .navbar-right {
+    display: flex;
+}
+
+.navbar a, .navbar form {
     color: #fff;
     padding: 10px;
     text-decoration: none;
+    display: flex;
+    align-items: center;
 }
 
 .navbar a:hover {
     background-color: #66bb6a;
+    border-radius: 4px;
 }
+
+/* Estilo para el botón de Cerrar Sesión */
+.btn-cerrar-sesion {
+    background-color: #f44336; /* Color rojo */
+    border: none;
+    color: white;
+    padding: 10px 15px; /* Espaciado */
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px; /* Tamaño de fuente */
+    margin-left: 10px; /* Espacio entre el botón y los enlaces */
+    border-radius: 4px; /* Bordes redondeados */
+    cursor: pointer; /* Cambia el cursor al pasar por encima */
+    transition: background-color 0.3s; /* Efecto de transición */
+}
+
+.btn-cerrar-sesion:hover {
+    background-color: #e57373; /* Color rojo más claro al pasar el mouse */
+}
+
+
+/* Align buttons to the right */
+.navbar-right {
+    margin-left: auto;
+}
+
+
 
 /* Table Styles */
 table {
@@ -98,4 +136,30 @@ footer {
     width: 100%;
     margin-top: auto; /* Esto asegura que el footer se mantenga al final */
 }
+
+/* Estilo para los botones de paginación */
+.btn-paginacion {
+    background-color: #007bff; /* Color azul */
+    border: none;
+    color: white;
+    padding: 10px 15px; /* Espaciado */
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px; /* Tamaño de fuente */
+    margin: 5px; /* Espacio entre botones */
+    border-radius: 4px; /* Bordes redondeados */
+    cursor: pointer; /* Cambia el cursor al pasar por encima */
+    transition: background-color 0.3s; /* Efecto de transición */
+}
+
+.btn-paginacion:hover {
+    background-color: #0056b3; /* Color azul más oscuro al pasar el mouse */
+}
+
+.btn-paginacion:disabled {
+    background-color: #c0c0c0; /* Color gris para el botón deshabilitado */
+    cursor: not-allowed; /* Cambia el cursor para indicar que está deshabilitado */
+}
+
 

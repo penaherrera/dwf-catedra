@@ -38,8 +38,8 @@
                 <h:outputText value="No hay noticias disponibles" />
             </h:panelGroup>
 
-            <h:commandButton value="Anterior" action="#{noticiaBean.prevPage}" disabled="#{noticiaBean.currentPage == 0}"/>
-            <h:commandButton value="Siguiente" action="#{noticiaBean.nextPage}" disabled="#{(noticiaBean.currentPage + 1) * noticiaBean.rowsPerPage >= noticiaBean.totalRows}"/>
+            <h:commandButton value="Anterior" action="#{noticiaBean.prevPage}" disabled="#{noticiaBean.currentPage == 0}" styleClass="btn-paginacion"/>
+            <h:commandButton value="Siguiente" action="#{noticiaBean.nextPage}" disabled="#{(noticiaBean.currentPage + 1) * noticiaBean.rowsPerPage >= noticiaBean.totalRows}" styleClass="btn-paginacion"/>
         </h:form>
 
     </div>

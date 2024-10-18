@@ -29,32 +29,32 @@
 
                 <div class="form-group">
                     <h:outputLabel for="nombre" value="Nombre:" />
-                    <h:inputText id="nombre" value="#{miembroBean.nombre}" required="true"
+                    <h:inputText id="nombre" value="#{miembroBean.tecnico.nombre}" required="true"
                                  styleClass="form-control"/>
                 </div>
 
                 <div class="form-group">
                     <h:outputLabel for="apodo" value="Apodo:" />
-                    <h:inputText id="apodo" value="#{miembroBean.apodo}" required="true"
+                    <h:inputText id="apodo" value="#{miembroBean.tecnico.apodo}" required="true"
                                  styleClass="form-control"/>
                 </div>
 
                 <div class="form-group">
                     <h:outputLabel for="edad" value="Edad:" />
-                    <h:inputText id="edad" value="#{miembroBean.edad}" required="true"
+                    <h:inputText id="edad" value="#{miembroBean.tecnico.edad}" required="true"
                                  styleClass="form-control"/>
                 </div>
 
                 <div class="form-group">
                     <h:outputLabel for="cargo" value="Cargo:" />
-                    <h:inputText id="cargo" value="#{miembroBean.cargo}" required="true"
+                    <h:inputText id="cargo" value="#{miembroBean.tecnico.cargo}" required="true"
                                  styleClass="form-control"/>
                 </div>
 
                 <!-- Botones de acción -->
                 <div class="form-actions">
                     <h:commandButton value="Guardar" action="#{miembroBean.updateMiembro('tecnico')}" styleClass="btn btn-primary"/>
-                    <h:link value="Cancelar" outcome="plantillaAdmin"/>
+                    <h:link value="Cancelar" outcome="tecnicosAdmin"/>
                 </div>
             </h:form>
         </div>

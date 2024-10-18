@@ -29,38 +29,38 @@
 
                 <div class="form-group">
                     <h:outputLabel for="nombre" value="Nombre:" />
-                    <h:inputText id="nombre" value="#{miembroBean.nombre}" required="true"
+                    <h:inputText id="nombre" value="#{miembroBean.jugador.nombre}" required="true"
                                  styleClass="form-control"/>
                 </div>
 
                 <div class="form-group">
                     <h:outputLabel for="apodo" value="Apodo:" />
-                    <h:inputText id="apodo" value="#{miembroBean.apodo}" required="true"
+                    <h:inputText id="apodo" value="#{miembroBean.jugador.apodo}" required="true"
                                  styleClass="form-control"/>
                 </div>
 
                 <div class="form-group">
                     <h:outputLabel for="edad" value="Edad:" />
-                    <h:inputText id="edad" value="#{miembroBean.edad}" required="true"
+                    <h:inputText id="edad" value="#{miembroBean.jugador.edad}" required="true"
                                  styleClass="form-control"/>
                 </div>
 
                 <div class="form-group">
                     <h:outputLabel for="posicion" value="Posición:" />
-                    <h:inputText id="posicion" value="#{miembroBean.posicion}" required="true"
+                    <h:inputText id="posicion" value="#{miembroBean.jugador.posicion}" required="true"
                                  styleClass="form-control"/>
                 </div>
 
                 <div class="form-group">
                     <h:outputLabel for="dorsal" value="Dorsal:" />
-                    <h:inputText id="dorsal" value="#{miembroBean.dorsal}" required="true"
+                    <h:inputText id="dorsal" value="#{miembroBean.jugador.dorsal}" required="true"
                                  styleClass="form-control"/>
                 </div>
 
                 <!-- Botones de acción -->
                 <div class="form-actions">
                     <h:commandButton value="Guardar" action="#{miembroBean.updateMiembro('jugador')}" styleClass="btn btn-primary"/>
-                    <h:link value="Cancelar" outcome="plantillaAdmin"/>
+                    <h:link value="Cancelar" outcome="jugadoresAdmin"/>
                 </div>
             </h:form>
         </div>

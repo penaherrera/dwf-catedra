@@ -4,15 +4,21 @@
 
     <nav>
         <div class="navbar">
-            <h:link value="Inicio" outcome="index"/>
-            <h:link value="Eventos" outcome="eventos" />
-            <h:link value="Plantilla" outcome="plantilla" />
-            <h:link value="Descuentos" outcome="descuentos" rendered="#{sessionService.usuarioRol == 0}"/>
-            <h:link value="Administrar" outcome="administrar" rendered="#{sessionService.usuarioRol == 1}" />
-            <h:link value="Iniciar Sesion" outcome="login" rendered="#{sessionService.usuarioRol == null}"/>
-            <h:form>
-                <h:commandButton value="Cerrar Sesion" action="#{usuarioBean.cerrarSesion()}" rendered="#{sessionService.usuarioRol != null}"/>
-            </h:form>
+            <div class="navbar-left">
+                <h:link value="Inicio" outcome="index"/>
+                <h:link value="Eventos" outcome="eventos" />
+                <h:link value="Plantilla" outcome="plantilla" />
+                <h:link value="Descuentos" outcome="descuentos" rendered="#{sessionService.usuarioRol == 0}"/>
+            </div>
+            <div class="navbar-right">
+                <h:link value="Administrar" outcome="administrar" rendered="#{sessionService.usuarioRol == 1}" />
+                <h:link value="Iniciar Sesion" outcome="login" rendered="#{sessionService.usuarioRol == null}"/>
+                <h:form>
+                    <h:commandButton value="Cerrar Sesion" action="#{usuarioBean.cerrarSesion()}"
+                                     rendered="#{sessionService.usuarioRol != null}"
+                                     styleClass="btn-cerrar-sesion"/>
+                </h:form>
+            </div>
         </div>
     </nav>
 </ui:composition>
