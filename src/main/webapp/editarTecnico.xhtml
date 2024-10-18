@@ -1,11 +1,65 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
       xmlns:f="http://xmlns.jcp.org/jsf/core">
-<f:view>
-    <h:outputLabel value="Hello, world"/>
-</f:view>
+
+<h:head>
+    <title>Editar Técnico</title>
+    <h:outputStylesheet library="css" name="editarTecnico.css"/>
+    <h:outputStylesheet library="css" name="principal.css"/>
+</h:head>
+
+<h:body>
+    <!-- Metadata para pasar parámetros y cargar el técnico -->
+    <f:metadata>
+        <f:viewParam name="id" value="#{miembroBean.id}" required="true"/>
+        <!-- Ejecutar loadMiembro antes de renderizar la vista -->
+        <f:event type="preRenderView" listener="#{miembroBean.loadMiembro}" />
+    </f:metadata>
+
+    <ui:include src="/resources/components/navbar.xhtml" />
+
+    <div class="container">
+        <h1>Editar Técnico</h1>
+
+        <div class="form-container">
+            <h:form>
+                <h:inputHidden id="tecnicoId" value="#{miembroBean.id}" />
+
+                <div class="form-group">
+                    <h:outputLabel for="nombre" value="Nombre:" />
+                    <h:inputText id="nombre" value="#{miembroBean.nombre}" required="true"
+                                 styleClass="form-control"/>
+                </div>
+
+                <div class="form-group">
+                    <h:outputLabel for="apodo" value="Apodo:" />
+                    <h:inputText id="apodo" value="#{miembroBean.apodo}" required="true"
+                                 styleClass="form-control"/>
+                </div>
+
+                <div class="form-group">
+                    <h:outputLabel for="edad" value="Edad:" />
+                    <h:inputText id="edad" value="#{miembroBean.edad}" required="true"
+                                 styleClass="form-control"/>
+                </div>
+
+                <div class="form-group">
+                    <h:outputLabel for="cargo" value="Cargo:" />
+                    <h:inputText id="cargo" value="#{miembroBean.cargo}" required="true"
+                                 styleClass="form-control"/>
+                </div>
+
+                <!-- Botones de acción -->
+                <div class="form-actions">
+                    <h:commandButton value="Guardar" action="#{miembroBean.updateMiembro('tecnico')}" styleClass="btn btn-primary"/>
+                    <h:link value="Cancelar" outcome="plantillaAdmin"/>
+                </div>
+            </h:form>
+        </div>
+    </div>
+
+    <ui:include src="/resources/components/footer.xhtml" />
+</h:body>
 </html>

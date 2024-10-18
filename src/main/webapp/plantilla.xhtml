@@ -3,22 +3,71 @@
         "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
-      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
-      xmlns:f="http://xmlns.jcp.org/jsf/core">
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+
 <h:head>
     <title>Plantilla</title>
+    <!-- Enlace al archivo CSS -->
     <h:outputStylesheet library="css" name="principal.css"/>
+    <h:outputStylesheet library="css" name="indexStyles.css"/>
 </h:head>
-<h:body>
 
+<h:body>
+    <!-- Navbar -->
     <ui:include src="/resources/components/navbar.xhtml" />
 
+    <!-- Contenido de la página -->
     <div class="container">
-    <h2>Plantilla</h2>
-    <p>Aquí irán los jugadores y el cuerpo tecnico.</p>
+        <h2>Plantilla</h2>
+
+        <!-- Sección de Jugadores -->
+        <h3>Jugadores</h3>
+        <h:form>
+            <div class="row">
+                <ui:repeat value="#{miembroBean.jugadores}" var="jugador" varStatus="status">
+                    <div class="col-md-4">
+                        <div class="card">
+                            <h5 class="card-title">#{jugador.nombre} (#{jugador.apodo})</h5>
+                            <p class="card-description">Posición: #{jugador.posicion}</p>
+                            <p class="card-description">Edad: #{jugador.edad}</p>
+                            <p class="card-description">Dorsal: #{jugador.dorsal}</p>
+                        </div>
+                    </div>
+                </ui:repeat>
+            </div>
+
+            <!-- Mensaje si no hay jugadores -->
+            <h:panelGroup rendered="#{empty miembroBean.jugadores}" styleClass="no-news-message">
+                <h:outputText value="No hay jugadores disponibles" />
+            </h:panelGroup>
+
+        </h:form>
+
+        <!-- Sección de Técnicos -->
+        <h3>Cuerpo Técnico</h3>
+        <h:form>
+            <div class="row">
+                <ui:repeat value="#{miembroBean.tecnicos}" var="tecnico" varStatus="status">
+                    <div class="col-md-4">
+                        <div class="card">
+                            <h5 class="card-title">#{tecnico.nombre} (#{tecnico.apodo})</h5>
+                            <p class="card-description">Cargo: #{tecnico.cargo}</p>
+                            <p class="card-description">Edad: #{tecnico.edad}</p>
+                        </div>
+                    </div>
+                </ui:repeat>
+            </div>
+
+            <!-- Mensaje si no hay técnicos -->
+            <h:panelGroup rendered="#{empty miembroBean.tecnicos}" styleClass="no-news-message">
+                <h:outputText value="No hay técnicos disponibles" />
+            </h:panelGroup>
+
+        </h:form>
+
     </div>
 
     <ui:include src="/resources/components/footer.xhtml" />
-
 </h:body>
 </html>

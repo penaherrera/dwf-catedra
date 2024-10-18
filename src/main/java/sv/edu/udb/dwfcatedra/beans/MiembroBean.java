@@ -13,13 +13,11 @@ import jakarta.annotation.PostConstruct;
 import jakarta.inject.Inject;
 import jakarta.inject.Named;
 import java.io.Serializable;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 import java.util.Objects;
 
-import sv.edu.udb.dwfcatedra.repository.domain.Noticia;
+import sv.edu.udb.dwfcatedra.repository.domain.Miembro;
 import sv.edu.udb.dwfcatedra.repository.domain.Tecnico;
 import sv.edu.udb.dwfcatedra.repository.domain.Jugador;
 import sv.edu.udb.dwfcatedra.service.TecnicoService;
@@ -59,35 +57,110 @@ public class MiembroBean implements Serializable{
     @Getter @Setter
     private Jugador jugador;
 
-    @Getter
+    @Getter @Setter
     private List<Jugador> jugadores;
 
     @Getter @Setter
     private Tecnico tecnico;
 
-    @Getter
+    @Getter @Setter
     private List<Tecnico> tecnicos;
 
+    // Nuevas propiedades para paginación específica de jugadores
+    @Getter @Setter
+    private int currentPageJugadores = 0;
+
+    @Getter @Setter
+    private int rowsPerPageJugadores = 5;
+
+    @Getter
+    private int totalRowsJugadores;
+
+    // Nuevas propiedades para paginación específica de técnicos
+    @Getter @Setter
+    private int currentPageTecnicos = 0;
+
+    @Getter @Setter
+    private int rowsPerPageTecnicos = 5;
+
+    @Getter
+    private int totalRowsTecnicos;
 
     @PostConstruct
     public void init() {
         if (this.id != null) {
             loadMiembro();
-        }
-        else{
+        } else {
             loadMiembros();
         }
     }
 
-    public void loadMiembro(){
+    public void loadMiembro() {
     }
 
-    public void loadMiembros(){
+    public void loadMiembros() {
+        // Cargar todos los jugadores y técnicos
         jugadores = jugadorService.getAllJugadores();
         tecnicos = tecnicoService.getAllTecnicos();
+
+        // Paginación inicial para jugadores y técnicos
+        totalRowsJugadores = jugadores.size();
+        totalRowsTecnicos = tecnicos.size();
+        paginateJugadores();
+        paginateTecnicos();
     }
 
-    public String createJugador(){
+    // Métodos de paginación para jugadores
+    public void paginateJugadores() {
+        if (totalRowsJugadores > 0) {
+            int start = currentPageJugadores * rowsPerPageJugadores;
+            int end = Math.min(start + rowsPerPageJugadores, totalRowsJugadores);
+            jugadores = jugadorService.getAllJugadores().subList(start, end);
+        } else {
+            jugadores = new ArrayList<>();
+        }
+    }
+
+    public void nextPageJugadores() {
+        if ((currentPageJugadores + 1) * rowsPerPageJugadores < totalRowsJugadores) {
+            currentPageJugadores++;
+            paginateJugadores();
+        }
+    }
+
+    public void prevPageJugadores() {
+        if (currentPageJugadores > 0) {
+            currentPageJugadores--;
+            paginateJugadores();
+        }
+    }
+
+    // Métodos de paginación para técnicos
+    public void paginateTecnicos() {
+        if (totalRowsTecnicos > 0) {
+            int start = currentPageTecnicos * rowsPerPageTecnicos;
+            int end = Math.min(start + rowsPerPageTecnicos, totalRowsTecnicos);
+            tecnicos = tecnicoService.getAllTecnicos().subList(start, end);
+        } else {
+            tecnicos = new ArrayList<>();
+        }
+    }
+
+    public void nextPageTecnicos() {
+        if ((currentPageTecnicos + 1) * rowsPerPageTecnicos < totalRowsTecnicos) {
+            currentPageTecnicos++;
+            paginateTecnicos();
+        }
+    }
+
+    public void prevPageTecnicos() {
+        if (currentPageTecnicos > 0) {
+            currentPageTecnicos--;
+            paginateTecnicos();
+        }
+    }
+
+    public String createJugador() {
         Jugador nuevoJugador = new Jugador();
         nuevoJugador.setNombre(this.nombre);
         nuevoJugador.setApodo(this.apodo);
@@ -100,8 +173,7 @@ public class MiembroBean implements Serializable{
         return "plantillaAdmin.xhtml?faces-redirect=true";
     }
 
-    public String createTecnico(){
-
+    public String createTecnico() {
         Tecnico nuevoTecnico = new Tecnico();
         nuevoTecnico.setNombre(this.nombre);
         nuevoTecnico.setApodo(this.apodo);
@@ -110,7 +182,7 @@ public class MiembroBean implements Serializable{
 
         tecnicoService.saveTecnico(nuevoTecnico);
 
-        return "plantillaAdmin.xhtml?faces-redirect=true";
+        return "tecnicosAdmin.xhtml?faces-redirect=true";
     }
 
     public String updateMiembro(String tipo){
@@ -154,5 +226,4 @@ public class MiembroBean implements Serializable{
         }
         return "plantillaAdmin.xhtml?faces-redirect=true";
     }
-
 }

@@ -5,11 +5,12 @@
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:f="http://xmlns.jcp.org/jsf/core"
       xmlns:ui="http://java.sun.com/jsf/facelets">
+
 <h:head>
-    <title>Administrar Tecnicos</title>
+    <title>Administrar Plantilla</title>
     <!-- Enlace al archivo CSS -->
     <h:outputStylesheet library="css" name="principal.css"/>
-    <h:outputStylesheet library="css" name="tecnicosAdmin.css"/>
+    <h:outputStylesheet library="css" name="plantillaAdmin.css"/>
 </h:head>
 
 <h:body>
@@ -18,38 +19,43 @@
 
     <!-- Contenido de la página -->
     <div class="container">
-        <h1>Administrar Tecnicos</h1>
+        <h1>Administrar Plantilla</h1>
 
-        <!-- Tabla para listar jugadores con enlaces para edición -->
-        <h:dataTable value="#{miembroBean.tecnicos}" var="tecnico">
-            <!-- Columna para mostrar el nombre del jugador -->
+        <!-- Tabla para listar jugadores -->
+        <h:dataTable value="#{miembroBean.jugadores}" var="jugador">
             <h:column>
                 <f:facet name="header">
                     <div class="table-header" style="display: flex; justify-content: space-between;">
-                        <span>Nombre</span>
-                        <!-- Enlace para crear un nuevo jugador, al lado del nombre -->
-                        <h:link value="Crear Tecnico +" outcome="crearTecnico" />
+                        <span>Nombre (Jugador)</span>
+                        <!-- Enlace para crear un nuevo jugador -->
+                        <h:link value="Crear Jugador +" outcome="crearMiembro" />
                     </div>
                 </f:facet>
-                <!-- Mostrar el nombre del jugador -->
-                <span class="tecnico-nombre">#{tecnico.nombre}</span>
+                <span class="miembro-nombre">#{jugador.nombre}</span>
             </h:column>
 
-            <!-- Columna para el botón de edición y eliminación al final de cada fila -->
+            <h:column>
+                <f:facet name="header">
+                    <span>Posición</span>
+                </f:facet>
+                <span class="miembro-posicion">#{jugador.posicion}</span>
+            </h:column>
+
             <h:column>
                 <f:facet name="header">
                     <span>Acciones</span>
                 </f:facet>
                 <h:form>
-                    <h:commandLink value="Editar" action="#{miembroBean.updateMiembro('tecnico')}" />
-                    <h:commandLink value="Eliminar" action="#{miembroBean.eliminarMiembro(tecnico.id, 'Tecnico')}"/>
+                    <h:commandLink value="Editar" action="#{miembroBean.redirectUpdateMiembro(jugador.id)}" />
+                    <h:commandLink value="Eliminar" action="#{miembroBean.eliminarMiembro(jugador.id, 'Jugador')}" />
                 </h:form>
             </h:column>
         </h:dataTable>
+
     </div>
 
+    <!-- Footer -->
     <ui:include src="/resources/components/footer.xhtml" />
 
 </h:body>
-
 </html>
