@@ -17,6 +17,9 @@ El proyecto fue construido en base a los requerimientos del proyecto de cátedra
 ## Despliegue
 *Parte1*
 
+Descarga el Script de la Base de Datos en el siguiente enlace:
+https://drive.google.com/drive/folders/16EGsFf1ZAhJ1TKd_cJLoRW6pMRl1eY7J?usp=sharing
+
 Abrir WampServer ó Xampp Control Panel (si se abre este último debe dar click al botón "Start" tanto en Apache como en MySQL)
 
 En este ejemplo se utilizará Xampp, una vez activados los servicios, dar click al botón "Admin" de MySQL
@@ -93,7 +96,10 @@ Contiene las clases JPA, las cuales se encargarán de interactuar con la base de
 ### domain:
 Contiene las entidades, que son las clases que representan los objetos persistentes en la base de datos.
 ### servicios:
-Se agregará en la próxima entrega.
+Contiene la logica de negocios, en esta clase se hacen las validaciones, reglas de negocio y coordinación entre las capas de datos y la presentación.
+
+### webapp
+Contiene las vistas .xhtml que interactuan tanto con el usuario, para datos de entrada y salida, como con el código, ya que los datos ingresados interactuan con los Managed Beans.
 
 ## Funcionalidades: 
 * Gestión de información de equipo de fútbol: Administra la plantilla completa de jugadores y su técnico, la calendarización de partidos y la comunicación con los miembros del club para recibir información sobre los eventos deportivos.
